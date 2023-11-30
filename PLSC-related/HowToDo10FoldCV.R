@@ -21,3 +21,8 @@ pls.res <- tepPLS(data1,data2, graphs = FALSE)
 
 ## Perform 10-fold validation
 pls.cv <- PLS.kFoldCV(data1, data2, pls.res, k = 10)
+
+## plot
+
+plot(pls.res$TExPosition.Data$lx[,1], pls.cv$cross.validation.res$lx.hat[,1])
+plot(pls.res$TExPosition.Data$ly[,1], pls.cv$cross.validation.res$ly.hat[,1])
