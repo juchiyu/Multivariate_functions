@@ -8,6 +8,8 @@ library(TExPosition) # to run PLSC
 library(purrr) # used in the kfold function
 
 ## Read needed functions ----
+source("ProjectSupplementaryData4PLS.R")
+source("PLS.kFoldCV.R")
 
 ## Read example data ----
 data(beer.tasting.notes)
