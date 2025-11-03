@@ -53,7 +53,7 @@ PLS.SplitHalfCV <- function(data1, data2, pls.res,
       grp.split.idx <- lapply(grp.n.ID, function(x){
         cut(seq(x), unique(quantile(seq(x), probs = seq(0, 1, length = 3))), 
             include.lowest = TRUE, 
-            labels = paste0("Fold", seq(2)))
+            labels = paste0("Half", seq(2)))
       })
       grp.split.design <- purrr::map2(grp.split.idx, grp.ID.order, setNames)
       split.idx <- setNames(unlist(grp.split.design, use.names = FALSE), unlist(grp.ID.order, use.names = FALSE))
