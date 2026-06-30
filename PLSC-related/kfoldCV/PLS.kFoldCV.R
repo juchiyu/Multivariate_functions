@@ -87,7 +87,8 @@ PLS.kFoldCV <- function(data1, data2, pls.res,
     ## run PLS with train set
     train.pls <- tepPLS(train.data1, train.data2,
            center1 = center1, center2 = center2,
-           scale1 = scale1, scale2 = scale2, graphs = FALSE)
+           scale1 = scale1, scale2 = scale2, DESIGN = NULL,
+           graphs = FALSE)
     
     ## Flip the sign if the correlation to the original loadings are negative
     flip <- diag(cor(pls.res$TExPosition.Data$pdq$q, train.pls$TExPosition.Data$pdq$q)) < 0
